@@ -57,6 +57,11 @@ def move():
     for target in targets:
         target.x -= 0.5
 
+        #Si el balon sale del borde izquierdo de la pantalla, lo regresamos al lado derecho
+        if target.x < -200:
+            target.x = 200
+            target.y = randrange(-150, 150)
+
     if inside(ball):
         speed.y -= 0.35
         ball.move(speed)
@@ -65,14 +70,21 @@ def move():
     targets.clear()
 
     for target in dupe:
-        if abs(target - ball) > 13:
+        # Si la bala golpea el objetivo regresa a la derecha
+        if abs(target - ball) < 13:
+            target.x = 200
+            target.y = randrange(-150, 150)
+            targets.append(target)
+        #Si sale por la izquierda, igual regresa a la derecha
+        elif target.x < -200:
+            target.x = 200
+            target.y = randrange(-150, 150)
+            targets.append(target)
+        else:
+        #El juego avanza normal
             targets.append(target)
 
     draw()
-
-    for target in targets:
-        if not inside(target):
-            return
 
     ontimer(move, 50)
 
