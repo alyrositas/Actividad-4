@@ -1,6 +1,6 @@
 # Actividad-4
 
-Seguir con una aplicación de juegos que maneja la física como inteligencia con un grado de dificultad aún mayor y requi... (aquí va tu descripción completa)
+Seguir con una aplicación de juegos que maneja la física como inteligencia con un grado de dificultad aún mayor y requiere de cambios para hacer un juego más retador e interminable.
 
 ## Funcionalidades implementadas
 
